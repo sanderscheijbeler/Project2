@@ -1,0 +1,40 @@
+.testimonial
+  background: linear-gradient(to right,$lighter-gray,$lightest-gray)
+  text-align: center
+  margin-bottom: 2em
+
+  ul li
+    border-bottom: none
+
+.testimonial-slider
+
+
+.message
+  width: 60%
+  margin: 0 auto
+  .name
+    text-align: right
+    font-weight: 500
+    &:before
+      content: "~ "
+
+  p
+    font-size: 1.1em
+    line-height: 1.9em
+    padding: 0 5em
+    @media screen and (max-width: 600px)
+      padding: 0 1em
+
+    img
+      height: 15px
+      margin: 0px 5px
+      display: inline
+
+ul.slick-dots
+  bottom: -45px
+
+.slick-dots li button:before
+  font-size: 50px
+
+.slick-dots li:hover
+  background: inherit

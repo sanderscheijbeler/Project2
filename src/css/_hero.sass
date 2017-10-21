@@ -1,0 +1,64 @@
+.hero
+  padding: 0
+  height: $hero-height
+
+.hero-slide
+  height: $hero-height
+  width: 100vw
+  position: relative
+  background:
+    position: center center
+    size: cover
+  h1
+    color: $white
+    margin: 0
+    line-height: 0
+    padding: 0
+    position: absolute
+    top: 50%
+    left: 20%
+    text-shadow: 1px 0px 7px rgba(66, 66, 66, 1)
+
+.slide1
+  background:
+    image: url(../img/img1.jpeg)
+
+.slide2
+  background:
+    image: url(../img/img2.jpeg)
+
+
+.slick-prev, .slick-next
+  z-index: 10
+  color: $lightest-gray
+  background: rgba(0,0,0,.3)
+  height: 50px
+  width: 50px
+  border: 2px solid $lightest-gray
+  transition: 200ms ease-in-out
+  top: initial
+  bottom: 20px
+  transform: none
+
+.slick-prev
+  left: none
+  right: 75px
+
+.slick-next
+  right: 20px
+
+.hero-slider [data-animation-in]
+  opacity: 0
+
+
+.slick-active
+  .slide-falldown
+    animation: fall-down 1000ms ease
+
+@keyframes fall-down
+  from
+    opacity: 0
+    transform: translateY(-100px)
+  to
+    opacity: 1
+    transform: translateY(0)

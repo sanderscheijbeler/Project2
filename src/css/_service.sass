@@ -1,0 +1,46 @@
+.service-header
+  text-align: center
+  height: 20vh
+  background:
+    image: url(../img/img2.jpeg)
+    position: center center
+    size: cover
+    attachment: fixed
+
+  .service-title
+    color: $white
+    text-shadow: 1px 0px 7px rgba(66, 66, 66, 1)
+
+.service-modules
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  grid-column-gap: 10px
+
+
+  .service
+    background-color: $lightest-gray
+
+  figure
+    overflow: hidden
+
+  img
+    transition: all .5s ease-in-out
+    &:hover, &:focus
+      transform: rotate(1deg) scale(1.1)
+
+  figcaption
+    padding: 30px
+    h4
+      text-transform: uppercase
+      margin: 0
+
+  .service-btn
+    display: inline
+    text-align: left
+    @media screen and (max-width: 760px)
+      display: block
+      text-align: center
+
+  .service-modules
+    .col-1-2, .col-1-3
+      padding: 20px

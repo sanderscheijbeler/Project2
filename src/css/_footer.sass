@@ -1,0 +1,55 @@
+footer
+  background: $gray
+  color: $white
+  padding: 3em 2em
+  &:after
+    content: ""
+    clear: both
+    display: table
+
+  @media screen and (min-width: 980px)
+    margin: 0 auto
+
+  a
+    color: $off-white
+    &:hover,:focus
+      color: $highlight
+
+
+.footer-contact
+  min-width: 285px
+  width: 33.33%
+  float: left
+  p
+    margin: 1.4em 0
+
+.footer-menu
+  min-width: 285px
+  width: 33.33%
+  float: left
+  margin: 0
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    li
+      text-transform: uppercase
+      padding-left: 20px
+      line-height: 3em
+      border-bottom: 1px solid $light-gray
+      &:hover,:focus
+        background-color: $gray
+  @media screen and (max-width: 650px)
+    margin: 1em 0 0 0
+
+  a
+    color: $white
+    text-decoration: none
+    transition: all 200ms cubic-bezier(0, 0, 0.25, 0.99)
+    &:hover,:focus
+      color: $light-gray
+
+.copyright
+  text-align: center
+  padding-top: 30px
+  clear: both
