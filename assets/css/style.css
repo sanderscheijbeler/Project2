@@ -374,6 +374,10 @@ th {
 * {
   box-sizing: border-box; }
 
+@media screen and (max-width: 500px) {
+  .not-on-mobile {
+    display: none; } }
+
 body {
   background: #ffffff;
   color: #333333;
@@ -3145,7 +3149,7 @@ footer {
   padding-top: 30px;
   clear: both; }
 
-.about-header {
+.small-header {
   text-align: center;
   height: 20vh;
   padding: 0;
@@ -3154,7 +3158,7 @@ footer {
   background-position: center center;
   background-size: cover;
   background-attachment: fixed; }
-  .about-header .about-title {
+  .small-header .about-title {
     display: block;
     margin: 0;
     padding: 0;
@@ -3221,38 +3225,123 @@ img.about-pic {
 .service-header {
   text-align: center;
   height: 20vh;
-  background-image: url(../img/img2.jpeg);
+  padding: 0;
+  position: relative;
+  background-image: url(../img/img1.jpeg);
   background-position: center center;
   background-size: cover;
   background-attachment: fixed; }
   .service-header .service-title {
+    display: block;
+    margin: 0;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+            transform: translateY(-50%) translateX(-50%);
+    position: absolute;
     color: #ffffff;
     text-shadow: 1px 0px 7px #424242; }
 
-.service-modules {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 10px; }
-  .service-modules .service {
-    background-color: #e4e9ed; }
-  .service-modules figure {
-    overflow: hidden; }
-  .service-modules img {
-    transition: all .5s ease-in-out; }
-    .service-modules img:hover, .service-modules img:focus {
-      -webkit-transform: rotate(1deg) scale(1.1);
-              transform: rotate(1deg) scale(1.1); }
-  .service-modules figcaption {
-    padding: 30px; }
-    .service-modules figcaption h4 {
-      text-transform: uppercase;
+.service-modules .service {
+  background-color: #e4e9ed;
+  margin: 0 5px 10px 5px; }
+
+.service-modules figure {
+  overflow: hidden;
+  width: 100%; }
+
+.service-modules img {
+  transition: all .5s ease-in-out; }
+  .service-modules img:hover, .service-modules img:focus {
+    -webkit-transform: rotate(1deg) scale(1.1);
+            transform: rotate(1deg) scale(1.1); }
+
+.service-modules figcaption {
+  padding: 30px; }
+  .service-modules figcaption h4 {
+    text-transform: uppercase;
+    margin: 0; }
+
+.service-modules .service-btn {
+  display: inline;
+  text-align: left; }
+  @media screen and (max-width: 760px) {
+    .service-modules .service-btn {
+      display: block;
+      text-align: center; } }
+
+.service-modules .service-modules .col-1-2, .service-modules .service-modules .col-1-3 {
+  padding: 20px; }
+
+.service-faq {
+  padding-top: 0; }
+  .service-faq .accordion {
+    width: 70%;
+    margin: 0 auto; }
+    @media screen and (max-width: 500px) {
+      .service-faq .accordion {
+        width: 95%;
+        margin: 0 auto; } }
+  .service-faq .accordion-toggle {
+    margin: 5px 0;
+    padding: 10px 40px;
+    background-color: #e4e9ed;
+    position: relative; }
+  .service-faq .faq-arrow {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    right: 20px; }
+  .service-faq .accordion-content {
+    background-color: #e4e9ed;
+    padding: 10px 40px;
+    margin: 0 0 5px 0;
+    display: none; }
+    .service-faq .accordion-content p {
       margin: 0; }
-  .service-modules .service-btn {
-    display: inline;
-    text-align: left; }
-    @media screen and (max-width: 760px) {
-      .service-modules .service-btn {
-        display: block;
-        text-align: center; } }
-  .service-modules .service-modules .col-1-2, .service-modules .service-modules .col-1-3 {
-    padding: 20px; }
+  .service-faq .active {
+    display: block; }
+
+.turn .fa {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg); }
+
+.contact-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+form {
+  width: 50%; }
+  @media screen and (max-width: 600px) {
+    form {
+      width: 80%; } }
+  @media screen and (max-width: 400px) {
+    form {
+      width: 95%; } }
+
+form > * {
+  display: block; }
+
+input, textarea {
+  width: 100%;
+  background-color: #e4e9ed;
+  border: none; }
+
+.errormsg {
+  color: #f4574c; }
+
+.goodmsg {
+  color: #2E8B57; }

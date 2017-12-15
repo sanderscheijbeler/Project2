@@ -1,0 +1,26 @@
+.contact-form
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+form
+  width: 50%
+  @media screen and (max-width: 600px)
+    width: 80%
+  @media screen and (max-width: 400px)
+    width: 95%
+
+form > *
+  display: block
+
+input, textarea
+  width: 100%
+  background-color: $lightest-gray
+  border: none
+
+.errormsg
+  color: $highlight
+
+.goodmsg
+  color: #2E8B57

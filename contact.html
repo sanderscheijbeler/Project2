@@ -47,52 +47,32 @@
 
       <main>
         <section class="small-header">
-          <h1 class="about-title">About</h1>
+          <h1 class="about-title">Contact</h1>
         </section> <!-- about header -->
 
 
-        <section class="about-info">
-          <div class="col-1-2 pic">
-            <img src="assets/img/about.png" alt="about" class="about-pic">
-          </div>
-          <div class="col-1-2">
-            <h3>Text titel 1</h3>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+        <section class="contact-form">
+          <h4>Let op, dit is alleen het front end gedeelte van een invulformulier. Ik heb dit gemaakt om te laten zien dat ik bekend ben met form-validatie. Dus bekijk gerust de code.</h4>
+          <form>
+            <label for="name">Voor en Achternaam: <span></span>
+            <input type="name" name="name" id="name">
+            </label>
 
-            <h3>Text titel 2</h3>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <label for="email">E-mail:
+            <input type="text" name="email" id="email">
+            </label>
 
-            <a href="#" target="_self" class="button highlight">Lees meer</a>
-          </div>
-        </section> <!-- about info -->
+            <label for="tel">Telefoon nr:
+            <input type="tel" name="tel" id="tel">
+            </label>
 
-        <section class="about-garantee">
-          <h1 class="title">Mijn Garanties</h1>
-          <div class="col-1-2 garantee-info">
-            <span class="round-number">1</span>
-            <h4>Titel something</h4>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          </div>
-          <div class="col-1-2 garantee-info">
-            <span class="round-number">2</span>
-            <h4>Titel something</h4>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          </div>
-          <div class="col-1-2 garantee-info">
-            <span class="round-number">3</span>
-            <h4>Titel something</h4>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          </div>
-          <div class="col-1-2 garantee-info">
-            <span class="round-number">4</span>
-            <h4>Titel something</h4>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          </div>
-
-        </section> <!-- about garantee -->
-
+            <label for="msg">Bericht:
+            <textarea name="msg" rows="5" cols="30" id="msg"></textarea>
+            </label>
+            <p id="feedbackmsg"></p>
+            <button id="send">Verzend</button> <span id="sendmsg"></span>
+          </form>
+        </section>
 
       </main>
 
