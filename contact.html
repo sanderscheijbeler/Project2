@@ -111,8 +111,86 @@
       </footer>
     </div> <!-- container -->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="assets/js/function.js"></script>
+  <script type="text/javascript" src="assets/js/function.js"></script>
+    <script>
+
+    //// Form validation on contact page
+    const inputName = document.querySelector("#name");
+    const inputMail = document.querySelector("#email");
+    const inputTel = document.querySelector("#tel");
+    const inputMsg = document.querySelector("#msg");
+    const feedbackmsg = document.querySelector("#sendmsg");
+    const submitbtn = document.querySelector("#send");
+    const inputFields = document.querySelectorAll("input");
+    let inputFieldArray = [];
+
+    const regExName = /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/;
+    const regExMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const regExTel = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+
+    attachInputValidation(inputName, regExName);
+    attachInputValidation(inputMail, regExMail);
+    attachInputValidation(inputTel, regExTel);
+
+    submitbtn.addEventListener("click", formSubmit);
+
+    //Putting all input fields into inputFieldArray so i can check them as valid, so when all are valid, submit can run. Or else submit will error
+    inputFields.forEach(function(inputField) {
+      inputFieldArray.push({
+        element: inputField,
+        valid: false
+      });
+    });
+
+    // Getting the input, listening to change and checking it
+    function attachInputValidation(elem, regex) {
+      elem.addEventListener("change", () => {
+        const value = elem.value;
+        verifyInput(elem, value, regex);
+      });
+    }
+
+    //Validation a la Sander
+    function verifyInput(elem, input, regEx) {
+      if (regEx.test(input)) {
+        feedbackmsg.innerHTML += `${elem.id} is good! 🔥 <br>`; //Show me if the 'on change' is good! Will change this to a nice looking green color outline or something.
+        //now we know that the input value is tested against the regEx, we take the ID and check it for a matching id within the inputFieldArray, that way we can make the valid true.
+        for (let i = 0; i < inputFieldArray.length; i++) {
+          if (inputFieldArray[i].element.id === elem.id) {
+            inputFieldArray[i].valid = true;
+            console.log(`I just make ${elem.id} true`)
+          }
+        }
+      } else {
+        feedbackmsg.innerHTML += `${elem.id} is wrong!!!! 💩 <br>`;// Show me is the 'on change' is false. Will change this aswell.
+        //If the input does not pass the test, loop through all elements, check wich input.element.id matches the elem.id (wich is passed in with the input) and change .valid too false.
+        for (let k = 0; k < inputFieldArray.length; k++) {
+          if (inputFieldArray[k].element.id === elem.id) {
+            inputFieldArray[k].valid = false;
+            console.log(`I just make ${elem.id} false`) // Talk to me what you changed
+            console.log(inputFieldArray) //Show me the array
+          }
+        }
+
+      }
+    }
+
+    // small function to prevent the form from resetting
+    function formSubmit(e) {
+      e.preventDefault();
+      //check if all inputs are valid
+      for (let j = 0; j < inputFieldArray.length; j++) {
+        if (inputFieldArray[j].valid === true) {
+          console.log(`InputField: ${inputFieldArray[j].element.id} was checked and valid`);
+        } else {
+          console.log(`Something went wrong during run ${inputFieldArray[j]}`);
+          document.getElementById("sendmsg").innerHTML = `Please check ${inputFieldArray[j].element.id}, because something is wrong!`;
+        }
+      }
+    }
+
+
+    </script>
 
   </body>
 </html>
