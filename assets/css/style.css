@@ -2654,6 +2654,9 @@ header {
     margin: 0 20px;
     padding: 0;
     line-height: 1.3em; }
+  @media screen and (max-width: 450px) {
+    header {
+      font-size: 0.75em; } }
 
 nav {
   overflow: hidden;
@@ -3154,7 +3157,7 @@ footer {
   height: 20vh;
   padding: 0;
   position: relative;
-  background-image: url(../img/img1.jpeg);
+  background-image: url(../img/bg1.jpeg);
   background-position: center center;
   background-size: cover;
   background-attachment: fixed; }
